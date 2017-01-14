@@ -17,27 +17,23 @@ var sockets = sio.sockets;
 var JWT_SECRET = 'jwt_secret';
 
 // socket io server set up
-sio.set('authorization', socketioJwt.authorize({
-   secret: JWT_SECRET,
-   handshake: true
-}));
-
+sio.set('authorization', getSocketIoJwtAuthorization());
 sockets.on('connection', onConnection);
 
 // express server set up
 app.post('/login', login);
+http.listen(3000, listen);
 
-http.listen(3000, function listen() {
-   console.log('listening on *:3000');
-});
-
-// socket io server set up functions ///////////////////////////////////////////
+function getSocketIoJwtAuthorization() {
+   return socketioJwt.authorize({
+      secret: JWT_SECRET,
+      handshake: true
+   });
+}
 
 function onConnection(socket) {
    console.log(socket.client.request.decoded_token.email, 'connected');
 }
-
-// express server set up functions /////////////////////////////////////////////
 
 function login(req, res) {
 
@@ -54,4 +50,8 @@ function login(req, res) {
    var token = jwt.sign(profile, JWT_SECRET, { expiresIn: 60 * 5 });
 
    res.send({ token: token });
+}
+
+function listen() {
+   console.log('listening on *:3000');
 }
