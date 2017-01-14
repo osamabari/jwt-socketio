@@ -1,11 +1,13 @@
 # Basic jwt-based authentication using socket.io
 
-This is a very basic example of client/server jwt-based authentication using _socket.io_. For authentication `socketio-jwt` has been used, so for further information I suggest visiting the [socketio-jwt Github repo](https://github.com/auth0/socketio-jwt).
+This is a very basic example of client/server jwt-based authentication using _socket.io_. 
 
-The repo consists of two directories:
+This repo consists of two directories:
 
 - **/server**: contains a very basic _Express_/_socket.io_ server app
 - **/client**: contains a very basic _socket.io_ client app
+
+For authentication, `socketio-jwt` has been used; for further information I suggest visiting the [socketio-jwt Github repo](https://github.com/auth0/socketio-jwt).
 
 ## The server
 
