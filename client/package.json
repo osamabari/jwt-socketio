@@ -9,6 +9,8 @@
   "author": "Carlos Martínez <carlosmartcast@gmail.com> (https://github.com/charliemc)",
   "license": "ISC",
   "dependencies": {
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
     "socket.io": "^1.7.2"
   }
 }
