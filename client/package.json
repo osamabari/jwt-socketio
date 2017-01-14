@@ -1,0 +1,14 @@
+{
+  "name": "jwt-socketio-client",
+  "version": "1.0.0",
+  "description": "Basic socketio client that uses jwt-based authentication",
+  "main": "client.js",
+  "scripts": {
+    "start": "node client.js"
+  },
+  "author": "Carlos Martínez <carlosmartcast@gmail.com> (https://github.com/charliemc)",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^1.7.2"
+  }
+}

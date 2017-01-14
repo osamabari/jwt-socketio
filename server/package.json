@@ -1,0 +1,16 @@
+{
+  "name": "jwt-socketio-server",
+  "version": "1.0.0",
+  "description": "Basic secured socketio server that uses jwt-based authentication",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Carlos Martínez <carlosmartcast@gmail.com> (https://github.com/charliemc)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.7.2"
+  }
+}
