@@ -15,9 +15,11 @@ function getTokenAndConnectToSocketIoServer() {
       .catch(handleErrors);
 }
 
-function getToken() {
+function getToken(options) {
    var requestTokenOptions = getTokenRequestOptions();
-   return requestToken(requestTokenOptions);
+
+   return sendLoginRequest(requestTokenOptions)
+      .then(parseBodyAndReturnToken);
 }
 
 function getTokenRequestOptions() {
@@ -29,10 +31,9 @@ function getTokenRequestOptions() {
    return options;
 }
 
-function requestToken(options) {
-   return rp(options)
-      .then(parseBodyAndReturnToken);
-}
+function sendLoginRequest(options) {
+   return rp(options);
+};
 
 function parseBodyAndReturnToken(body) {
    var parsedBody = JSON.parse(body)
