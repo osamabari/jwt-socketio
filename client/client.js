@@ -15,7 +15,7 @@ function getTokenAndConnectToSocketIoServer() {
       .catch(handleErrors);
 }
 
-function getToken(options) {
+function getToken() {
    var requestTokenOptions = getTokenRequestOptions();
 
    return sendLoginRequest(requestTokenOptions)
