@@ -24,7 +24,7 @@ Just go to the server's directory (`/server`) and type `$ npm start` in your ter
 
 Consists of a very basic _socket.io_ client that will connect to the server. Previously, an http request is done to the server's **/login** method to authenticate and retrieve a valid token that will be used from that moment to connect to the _socket.io_ server.
 
-### Launch the server
+### Launch the client
 
 Just go to the server's directory (`/client`) and type `$ npm start` in your terminal _(*)_.
 
