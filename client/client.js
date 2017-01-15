@@ -16,13 +16,16 @@ function getTokenAndConnectToSocketIoServer() {
 }
 
 function getToken() {
-   var requestTokenOptions = getRequestTokenOptions();
-
-   return sendLoginRequest(requestTokenOptions)
+   return sendLoginRequest()
       .then(parseBodyAndReturnToken);
 }
 
-function getRequestTokenOptions() {
+function sendLoginRequest(options) {
+   var loginRequestOptions = getLoginRequestOptions();
+   return sendHttpRequest(loginRequestOptions);
+};
+
+function getLoginRequestOptions() {
    var options = {
       method: 'POST',
       uri: ENDPOINT + '/login'
@@ -31,7 +34,7 @@ function getRequestTokenOptions() {
    return options;
 }
 
-function sendLoginRequest(options) {
+function sendHttpRequest(options) {
    return rp(options);
 };
 
