@@ -11,7 +11,7 @@ For authentication, `socketio-jwt` has been used; for further information I sugg
 
 ## The server
 
- Consists of a very basic _Express_ app that exposes single POST method that always returns a valid JWToken:
+ Consists of a very basic _Express_ app that exposes a single POST method that always returns a valid JWToken:
 
 - **POST /login**
    - **returns** a JSON object with the authentication token: `{ "token": "...jwt..." }`
